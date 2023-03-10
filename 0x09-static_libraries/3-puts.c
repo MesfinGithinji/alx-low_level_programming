@@ -1,22 +1,14 @@
 #include<stdio.h>
 #include "main.h"
-
+void _puts( __attribute__((unused))char *s)
+{}
 /**
- * main - Entry Point
- *
- * _puts - prints that string
- *
- * @str: input value
+ * main - Entry point
  *
  * Return: Always 0 (Success)
-*/
-
-void _puts(char *str)
-{
-
-}
+ */
 int main(void)
 {
-	_puts("\"Programming is like building a multilingual puzzle");
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
