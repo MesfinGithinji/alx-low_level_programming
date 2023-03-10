@@ -1,10 +1,16 @@
 #include<stdio.h>
 #include "main.h"
+
 /**
- * main - Entry point
+ * main - Entry Point
+ *
+ * _puts - prints that string
+ *
+ * @str: input value
  *
  * Return: Always 0 (Success)
- */
+*/
+
 void _puts(char *str)
 {
 
