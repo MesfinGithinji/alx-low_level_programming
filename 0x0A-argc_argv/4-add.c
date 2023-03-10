@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include "main.h"
 	/**
-	 * check_num - check - string there are digit
+	 * check_num - check string there are digit
 	 * @str: array str
 	 *
 	 * Return: Always 0 (Success)
@@ -41,8 +42,6 @@
 
 
 	int main(int argc, char *argv[])
-
-
 	{
 
 
