@@ -1,13 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+	#include <stdlib.h>
+	#include <ctype.h>
+	#include <string.h>
 	/**
-	 *
 	 * check_num - check - string there are digit
-	 * 
-	 * main - Print the name of the program
-	 *
 	 * @str: array str
 	 *
 	 * Return: Always 0 (Success)
