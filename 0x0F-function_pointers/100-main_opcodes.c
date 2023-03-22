@@ -4,7 +4,7 @@
 /**
 * main - print own opcodes
 * @argc: argument count
-* @argv: array of arguments passed 
+* @argv: array of arguments passed
 *
 * Return: Always 0 (Success)
 */
