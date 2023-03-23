@@ -33,7 +33,7 @@ printf("%s%f", seprtr, va_arg(mylist, double));
 break;
 case 's':
 strng = va_arg(mylist, char *);
-if (!str)
+if (!strng)
 strng = "(nil)";
 printf("%s%s", seprtr, strng);
 break;
