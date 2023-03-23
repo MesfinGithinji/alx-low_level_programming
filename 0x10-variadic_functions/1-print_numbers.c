@@ -18,7 +18,7 @@ va_start(mynum, n);
 
 for (i = 0; i < n; i++)
 {
-printf("%d", va_arg(nums, int));
+printf("%d", va_arg(mynum, int));
 
 if (i != (n - 1) && separator != NULL)
 printf("%s", separator);
