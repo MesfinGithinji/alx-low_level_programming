@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 
 /**
  * print_binary - function that prints binary of a number.
@@ -8,8 +9,16 @@
 
 void print_binary(unsigned long int n)
 {
-if (n > 1)
-print_binary(n >> 1);
+int dec = 0;
+int x = 0;
+unsigned int val
 
-_putchar((n & 1) + '0');
+while(n!=0)
+{
+val = n % 10;
+n /= 10;
+dec += val * pow(2, x);
+++x;
+}
+return dec;
 }
