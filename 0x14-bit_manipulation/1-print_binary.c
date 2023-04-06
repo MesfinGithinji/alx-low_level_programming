@@ -9,16 +9,17 @@
 
 void print_binary(unsigned long int n)
 {
-int dec = 0;
-int x = 0;
-unsigned int val
+int dec = 0,
+int i = 0,
+int rem;
 
-while(n!=0)
+while (n!=0) 
 {
-val = n % 10;
+rem = n % 10;
 n /= 10;
-dec += val * pow(2, x);
-++x;
+dec += rem * pow(2, i);
+++i;
 }
 return dec;
+_putchar(print_binary(n));
 }
