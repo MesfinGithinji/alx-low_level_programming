@@ -18,7 +18,7 @@ return (0);
 
 for (x = 0; b[x]; x++)
 {
-if (b[x] < '0' || b[x] > '0')
+if (b[x] < '0' || b[x] > '1')
 return (0);
 val = 2 * val + (b[x] - '0');
 }
