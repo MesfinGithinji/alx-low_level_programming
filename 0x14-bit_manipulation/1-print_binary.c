@@ -8,21 +8,21 @@
 
 void print_binary(unsigned long int n)
 {
-int i, x = 0;
-unsigned long int val;
+int i, count = 0;
+unsigned long int current;
 
 for (i = 63; i >= 0; i--)
 {
-val = n >> i;
+current = n >> i;
 
-if (val & 1)
+if (current & 1)
 {
 _putchar('1');
-x++;
+count++;
 }
-else if (x)
+else if (count)
 _putchar('0');
 }
-if (!x)
+if (!count)
 _putchar('0');
 }
