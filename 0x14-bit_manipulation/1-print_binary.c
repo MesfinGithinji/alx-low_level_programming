@@ -9,17 +9,21 @@
 
 void print_binary(unsigned long int n)
 {
-int dec = 0,
-int i = 0,
-int rem;
+int i, x = 0;
+unsigned long int val;
 
-while (n!=0) 
+for (i = 63; i >= 0; i--)
 {
-rem = n % 10;
-n /= 10;
-dec += rem * pow(2, i);
-++i;
+val = n >> i;
+
+if (val & 1)
+{
+_putchar('1');
+count++;
 }
-return dec;
-_putchar(print_binary(n));
+else if (x)
+_putchar('0');
+}
+if (!x)
+_putchar('0');
 }
