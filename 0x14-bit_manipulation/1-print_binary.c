@@ -1,5 +1,4 @@
 #include "main.h"
-#include <math.h>
 
 /**
  * print_binary - function that prints binary of a number.
@@ -19,7 +18,7 @@ val = n >> i;
 if (val & 1)
 {
 _putchar('1');
-count++;
+x++;
 }
 else if (x)
 _putchar('0');
