@@ -1,5 +1,9 @@
 #include "main.h"
 
+
+char *create_buffer(char *filr);
+void close_file(int fd);
+
 /**
  * create_buffer - Creates a buffer and allocates 1024 bytes.
  * @file: Name of file buffer is going to store for.
@@ -15,7 +19,7 @@ buffer = malloc(sizeof(char) * 1024);
 
 if (buffer == NULL)
 {
-dprintf(STDERR_FILENO, "Error writing to %s\n !!", file);
+dprintf(STDERR_FILENO, "Error writing to %s!!\n", file);
 exit(99);
 }
 
@@ -73,7 +77,7 @@ to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 do {
 if (from == -1 || r == -1)
 {
-dprintf(STDERR_FILENO, "Error:File %s\n Cant be Read!!", argv[1]);
+dprintf(STDERR_FILENO, "Error:File %s Cant be Read!!\n", argv[1]);
 free(buffer);
 exit(98);
 }
