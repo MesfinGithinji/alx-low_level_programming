@@ -3,14 +3,13 @@
 /**
  * get_dnodeint_at_index - returns the nth node of a linked list
  *
- *
  * @head: head node of the list
  * @index: nth node index
  * Return: NULL if node doesn't exist.
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int x;
+	unsigned int i;
 
 	if (head == NULL)
 		return (NULL);
@@ -18,14 +17,14 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	while (head->prev != NULL)
 		head = head->prev;
 
-	x = 0;
+	i = 0;
 
 	while (head != NULL)
 	{
 		if (i == index)
 			break;
 		head = head->next;
-		x++;
+		i++;
 	}
 
 	return (head);
