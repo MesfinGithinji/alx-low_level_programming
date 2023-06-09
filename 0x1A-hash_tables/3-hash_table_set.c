@@ -11,43 +11,44 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new;
-	char *value_copy;
-	unsigned long int index, i;
+	unsigned long int index = 0;
+	char *temp_val = NULL;
+	hash_node_t *temp = NULL, *new = NULL;
 
-	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+	if (!ht || !ht->array || !value)
 		return (0);
 
-	value_copy = strdup(value);
-	if (value_copy == NULL)
+	if (strlen(key) == 0 || !key)
 		return (0);
+	temp_val = strdup(value);
+	if (!temp_val)
+		return (0);
+	index = key_index((unsigned char *)key, ht->size);
 
-	index = key_index((const unsigned char *)key, ht->size);
-	for (i = index; ht->array[i]; i++)
+	/* checks for a collision */
+	temp = ht->array[index];
+	while (temp)
 	{
-		if (strcmp(ht->array[i]->key, key) == 0)
+		if (strcmp(temp->key, key) == 0)
 		{
-			free(ht->array[i]->value);
-			ht->array[i]->value = value_copy;
+			free(temp->value);
+			temp->value = temp_val;
+			temp->value = strdup(value);
+			free(temp_val);
 			return (1);
 		}
+		temp = temp->next;
 	}
-
+	/* If no collision exists, insert a node */
 	new = malloc(sizeof(hash_node_t));
-	if (new == NULL)
-	{
-		free(value_copy);
-		return (0);
-	}
-	new->key = strdup(key);
-	if (new->key == NULL)
+	if (!new)
 	{
 		free(new);
 		return (0);
 	}
-	new->value = value_copy;
+	new->key = strdup(key);
+	new->value = temp_val;
 	new->next = ht->array[index];
 	ht->array[index] = new;
-
 	return (1);
 }
